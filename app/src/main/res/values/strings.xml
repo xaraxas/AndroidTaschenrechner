@@ -25,5 +25,21 @@
     <string name="buttonSquareRoot">√</string>
     <string name="buttonSquared">x²</string>
     <string name="buttonInvert">1/x</string>
+    <string name="buttonBackspace">del</string>
+    <string name="buttonA">A</string>
+    <string name="buttonB">B</string>
+    <string name="buttonC">C</string>
+    <string name="buttonD">D</string>
+    <string name="buttonE">E</string>
+    <string name="buttonF">F</string>
+    <string name="buttonPercentage">%</string>
+    <string name="radiobuttonHex">Hex</string>
+    <string name="radiobuttonDez">Dez</string>
+    <string name="radiobuttonOkt">Okt</string>
+    <string name="radiobuttonBin">Bin</string>
+    <string name="title_activity_advanced_mofo">AdvancedMOFO</string>
+
+    <string name="hello_world">Hello world!</string>
+
 
 </resources>

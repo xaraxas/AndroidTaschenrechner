@@ -64,42 +64,88 @@
     <!--</LinearLayout>-->
 
     <LinearLayout
+        android:orientation="horizontal"
         android:id="@+id/row3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".12" >
 
-        <Button
-            android:id="@+id/buttonClear"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonClear"
-            android:textSize="25sp" />
 
         <Button
-            android:id="@+id/buttondel"
-            android:layout_width="0dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonBackspace"
-            android:textSize="25sp" />
+            android:text="@string/buttonA"
+            android:textSize="25sp"
+            android:id="@+id/buttonA" />
 
         <Button
-            android:id="@+id/buttonDivide"
-            android:layout_width="0dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonDivide"
-            android:textSize="25sp" />
+            android:text="@string/buttonB"
+            android:textSize="25sp"
+            android:id="@+id/buttonB" />
 
         <Button
-            android:id="@+id/buttonMultiply"
-            android:layout_width="0dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonMultiply"
-            android:textSize="25sp" />
+            android:text="@string/buttonC"
+            android:textSize="25sp"
+            android:id="@+id/buttonC" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="@string/buttonD"
+            android:textSize="25sp"
+            android:id="@+id/buttonD" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="@string/buttonE"
+            android:textSize="25sp"
+            android:id="@+id/buttonE" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="@string/buttonF"
+            android:textSize="25sp"
+            android:id="@+id/buttonF" />
+
+        <RadioGroup
+            android:layout_width="250dp"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/radiobuttonHex"
+                android:textSize="25sp"
+                android:id="@+id/radioButtonHex" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/radiobuttonDez"
+                android:textSize="25sp"
+                android:id="@+id/radioButtonDez" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/radiobuttonOkt"
+                android:textSize="25sp"
+                android:id="@+id/radioButtonOkt" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/radiobuttonBin"
+                android:textSize="25sp"
+                android:id="@+id/radioButtonBin" />
+
+        </RadioGroup>
     </LinearLayout>
 
     <LinearLayout
@@ -177,7 +223,7 @@
             android:layout_height="match_parent"
             android:layout_weight=".25"
             android:text="@string/buttonAdd"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -257,5 +303,11 @@
             android:text="@string/buttonEquals"
             android:textSize="25sp" />
     </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"></LinearLayout>
 
 </LinearLayout>
