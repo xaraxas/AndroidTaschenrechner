@@ -106,14 +106,22 @@ public class MainActivity extends Activity {
         switch (v.getId()) {
             case R.id.buttonDivide:
                 if (temp1 == floatNull) {
-                    temp1 = Float.parseFloat(textView1.getText().toString());
+                    if (textView1.getText().toString().equals("")) {
+
+                    } else {
+                        temp1 = Float.parseFloat(textView1.getText().toString());
+                    }
                     textView1.setText("");
                 }
                 operator = "/";
                 break;
             case R.id.buttonMultiply:
                 if (temp1 == floatNull) {
-                    temp1 = Float.parseFloat(textView1.getText().toString());
+                    if (textView1.getText().toString().equals("")) {
+
+                    } else {
+                        temp1 = Float.parseFloat(textView1.getText().toString());
+                    }
                     textView1.setText("");
                 }
                 operator = "*";
@@ -121,14 +129,22 @@ public class MainActivity extends Activity {
                 break;
             case R.id.buttonSubtract:
                 if (temp1 == floatNull) {
-                    temp1 = Float.parseFloat(textView1.getText().toString());
+                    if (textView1.getText().toString().equals("")) {
+
+                    } else {
+                        temp1 = Float.parseFloat(textView1.getText().toString());
+                    }
                     textView1.setText("");
                 }
                 operator = "-";
                 break;
             case R.id.buttonAdd:
                 if (temp1 == floatNull) {
-                    temp1 = Float.parseFloat(textView1.getText().toString());
+                    if (textView1.getText().toString().equals("")) {
+
+                    } else {
+                        temp1 = Float.parseFloat(textView1.getText().toString());
+                    }
                     textView1.setText("");
                 }
                 operator = "+";
@@ -140,8 +156,12 @@ public class MainActivity extends Activity {
     }
 
     public void onClickEquals(View v) {
+        if (textView1.getText().toString().equals("")) {
 
-        temp2 = Float.parseFloat(textView1.getText().toString());
+        } else {
+
+            temp2 = Float.parseFloat(textView1.getText().toString());
+        }
         if (temp1 != null) {
 
             if (operator.equals("/")) {
@@ -173,8 +193,12 @@ public class MainActivity extends Activity {
 
             }
         } else {
-            temp4 = Float.parseFloat(textView1.getText().toString());
-            textView1.setText(temp4.toString());
+            if (textView1.getText().toString().equals("")) {
+
+            } else {
+                temp4 = Float.parseFloat(textView1.getText().toString());
+                textView1.setText(temp4.toString());
+            }
         }
     }
 
