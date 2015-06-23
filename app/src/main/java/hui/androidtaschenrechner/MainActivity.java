@@ -3,7 +3,6 @@ package hui.androidtaschenrechner;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,7 +13,7 @@ public class MainActivity extends Activity {
             buttonDivide, buttonMultiply, buttonSubtract, buttonAdd, buttonDecimalPoint, buttonEquals;
     TextView textView1;
     String operator;
-    Float temp1, temp2, result,floatNull;
+    Float temp1, temp2, temp4, result, floatNull;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,30 +76,43 @@ public class MainActivity extends Activity {
                 textView1.append("9");
                 break;
             case R.id.buttonDecimalPoint:
-                textView1.append(",");
+                textView1.append(".");
                 break;
+
+        }
+    }
+
+    public void onClickListenerDelete(View v) {
+        switch (v.getId()) {
             case R.id.buttonBackspace:
 
-
+                String temp3 = textView1.getText().toString();
+                if (temp3.length() == 0) {
+                    textView1.setText(temp3.substring(0, temp3.length() - 1));
+                }
                 break;
 
             case R.id.buttonClear:
+                textView1.setText("");
+                temp1 = floatNull;
+                temp2 = floatNull;
 
                 break;
+
         }
     }
 
     public void onClickListenerOperator(View v) {
         switch (v.getId()) {
             case R.id.buttonDivide:
-                if (temp1==floatNull) {
+                if (temp1 == floatNull) {
                     temp1 = Float.parseFloat(textView1.getText().toString());
                     textView1.setText("");
                 }
                 operator = "/";
                 break;
             case R.id.buttonMultiply:
-                if (temp1==floatNull) {
+                if (temp1 == floatNull) {
                     temp1 = Float.parseFloat(textView1.getText().toString());
                     textView1.setText("");
                 }
@@ -108,14 +120,14 @@ public class MainActivity extends Activity {
 
                 break;
             case R.id.buttonSubtract:
-                if (temp1==floatNull) {
+                if (temp1 == floatNull) {
                     temp1 = Float.parseFloat(textView1.getText().toString());
                     textView1.setText("");
                 }
                 operator = "-";
                 break;
             case R.id.buttonAdd:
-                if (temp1==floatNull) {
+                if (temp1 == floatNull) {
                     temp1 = Float.parseFloat(textView1.getText().toString());
                     textView1.setText("");
                 }
@@ -130,35 +142,39 @@ public class MainActivity extends Activity {
     public void onClickEquals(View v) {
 
         temp2 = Float.parseFloat(textView1.getText().toString());
+        if (temp1 != null) {
 
+            if (operator.equals("/")) {
+                result = temp1 / temp2;
+                temp1 = null;
+                temp2 = null;
+                textView1.setText(String.valueOf(result));
 
-        if (operator.equals("/")) {
-            float result =temp1/temp2;
-            temp1=null;
-            temp2=null;
-            textView1.setText(String.valueOf(result));
+            }
+            if (operator.equals("+")) {
+                result = temp1 + temp2;
+                temp1 = null;
+                temp2 = null;
+                textView1.setText(String.valueOf(result));
 
-        }
-        if (operator.equals("+")) {
-            float result =temp1+temp2;
-            temp1=null;
-            temp2=null;
-            textView1.setText(String.valueOf(result));
+            }
+            if (operator.equals("*")) {
+                result = temp1 * temp2;
+                temp1 = null;
+                temp2 = null;
+                textView1.setText(String.valueOf(result));
 
-        }
-        if (operator.equals("*")) {
-            float result =temp1*temp2;
-            temp1=null;
-            temp2=null;
-            textView1.setText(String.valueOf(result));
+            }
+            if (operator.equals("-")) {
+                result = temp1 - temp2;
+                temp1 = null;
+                temp2 = null;
+                textView1.setText(String.valueOf(result));
 
-        }
-        if (operator.equals("-")) {
-            float result =temp1-temp2;
-            temp1=null;
-            temp2=null;
-            textView1.setText(String.valueOf(result));
-
+            }
+        } else {
+            temp4 = Float.parseFloat(textView1.getText().toString());
+            textView1.setText(temp4.toString());
         }
     }
 

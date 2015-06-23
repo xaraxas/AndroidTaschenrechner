@@ -76,7 +76,7 @@
             android:layout_weight=".25"
             android:text="@string/buttonClear"
             android:textSize="25sp"
-            android:onClick=""
+            android:onClick="onClickListenerDelete"
             />
 
         <Button
@@ -86,7 +86,7 @@
             android:layout_weight=".25"
             android:text="@string/buttonBackspace"
             android:textSize="25sp"
-            android:onClick=""
+            android:onClick="onClickListenerDelete"
             />
 
         <Button
