@@ -87,7 +87,7 @@ public class MainActivity extends Activity {
             case R.id.buttonBackspace:
 
                 String temp3 = textView1.getText().toString();
-                if (temp3.length() == 0) {
+                if (temp3.length() != 0) {
                     textView1.setText(temp3.substring(0, temp3.length() - 1));
                 }
                 break;
