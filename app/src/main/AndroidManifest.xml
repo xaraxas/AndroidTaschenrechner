@@ -24,6 +24,10 @@
             android:name=".DocumentationActivity"
             android:label="@string/title_activity_advanced">
         </activity>
+        <activity android:name=".AboutActivity"
+            android:label="@string/title_about">
+
+        </activity>
     </application>
 
 </manifest>

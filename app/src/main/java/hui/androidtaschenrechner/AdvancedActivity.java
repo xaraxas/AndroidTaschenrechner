@@ -49,6 +49,9 @@ public class AdvancedActivity extends AppCompatActivity {
         if (id == R.id.menuDocumentation) {
             startActivity(new Intent(this, DocumentationActivity.class));
         }
+        if(id == R.id.menuAbout){
+            startActivity(new Intent(this,AboutActivity.class));
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -452,6 +455,8 @@ public class AdvancedActivity extends AppCompatActivity {
 
         }
     }
+
+
 
     public void onClickListenerOperator(View v) {
         switch (v.getId()) {

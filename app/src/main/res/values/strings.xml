@@ -46,6 +46,9 @@
     <string name="or">OR</string>
     <string name="xor">XOR</string>
     <string name="normal">Normal</string>
+    <string name="menu_about">About</string>
+    <string name="about">Diese App wurde von \n Hui Chin \n zu Testzwecken entwickelt.</string>
+    <string name="title_about">About</string>
 
     <string name="hello_world">Hello world!</string>
 
