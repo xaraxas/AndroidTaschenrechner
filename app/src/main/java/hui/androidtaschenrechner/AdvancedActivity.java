@@ -104,13 +104,12 @@ public class AdvancedActivity extends AppCompatActivity {
 
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                // find which radio button is selected
+
 
                 if (checkedId == R.id.radioButtonDez) {
                     enableAllButtons();
 
-                    //buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonDecimalPoint, buttonSquared, buttonSquareRoot, buttonInvert, buttonPercent
-                    disableButton(buttonA);
+                     disableButton(buttonA);
                     disableButton(buttonB);
                     disableButton(buttonC);
                     disableButton(buttonD);
@@ -144,7 +143,6 @@ public class AdvancedActivity extends AppCompatActivity {
                 }
                 if (checkedId == R.id.radioButtonBin) {
                     enableAllButtons();
-                    //button3, button4, button5, button6, button7, button8, button9, buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonDecimalPoint, buttonSquared, buttonSquareRoot, buttonInvert, buttonPercent
                     disableButton(button2);
                     disableButton(button3);
                     disableButton(button4);
@@ -207,7 +205,7 @@ public class AdvancedActivity extends AppCompatActivity {
                 }
                 // TODO umwandlung zu hex
                 if (checkedId == R.id.radioButtonHex) {
-                    // buttonDecimalPoint, buttonSquared, buttonSquareRoot, buttonInvert, buttonPercent
+
                     enableAllButtons();
                     disableButton(buttonDecimalPoint);
                     disableButton(buttonSquared);
@@ -231,6 +229,7 @@ public class AdvancedActivity extends AppCompatActivity {
 
                             }
                         }
+                        // TODO OCT -> HEX
                         if (currentFormat.equals("oct")) {
                             if (!textView1.getText().toString().equals(null)) {
 
@@ -256,7 +255,6 @@ public class AdvancedActivity extends AppCompatActivity {
                 }
                 // TODO umwandlung zu okt
                 if (checkedId == R.id.radioButtonOkt) {
-                    //button9, button8, buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonDecimalPoint, buttonSquared, buttonSquareRoot, buttonInvert, buttonPercent
                     enableAllButtons();
                     disableButton(buttonDecimalPoint);
                     disableButton(buttonSquared);
