@@ -41,6 +41,10 @@
     <string name="radiobuttonOkt">Okt</string>
     <string name="radiobuttonBin">Bin</string>
     <string name="title_activity_advanced">Advanced</string>
+    <string name="not">NOT</string>
+    <string name="and">AND</string>
+    <string name="or">OR</string>
+    <string name="xor">XOR</string>
 
     <string name="hello_world">Hello world!</string>
 

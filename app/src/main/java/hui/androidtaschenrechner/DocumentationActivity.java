@@ -29,7 +29,7 @@ public class DocumentationActivity extends Activity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.documentation);
+        setContentView(R.layout.layout_documentation);
 
         final WebView view = (WebView) findViewById(R.id.webview);
         view.getSettings().setJavaScriptEnabled(true);

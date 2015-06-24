@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView1;
     String operator;
     Float temp1, temp2, temp4, result, floatNull;
+    private RadioGroup radioModeGroup;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -46,10 +48,11 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.layout_advanced);
         button0 = (Button) findViewById(R.id.button0);
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
@@ -69,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         buttonDecimalPoint = (Button) findViewById(R.id.buttonDecimalPoint);
         buttonEquals = (Button) findViewById(R.id.buttonEquals);
         textView1 = (TextView) findViewById(R.id.textView1);
+        radioModeGroup = (RadioGroup) findViewById(R.id.radioModeGroup);
 
     }
 
@@ -108,6 +112,16 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.buttonDecimalPoint:
                 textView1.append(".");
+                break;
+            case R.id.buttonToggleSign:
+                try {
+                    float tempFloat = Float.parseFloat(textView1.getText().toString());
+                    tempFloat = -tempFloat;
+                    textView1.setText(String.valueOf(tempFloat));
+                } catch (NumberFormatException ex) {
+                    ex.printStackTrace();
+                }
+
                 break;
 
         }
@@ -230,6 +244,26 @@ public class MainActivity extends AppCompatActivity {
                 temp4 = Float.parseFloat(textView1.getText().toString());
                 textView1.setText(temp4.toString());
             }
+        }
+    }
+
+    public void onClickX(View v) {
+        switch (v.getId()) {
+            case R.id.buttonSquared:
+                float temp5 = Float.parseFloat(textView1.getText().toString());
+                double temp6 = Math.pow(temp5, 2);
+                textView1.setText(String.valueOf(temp6));
+                break;
+            case R.id.buttonSquareRoot:
+                float temp7 = Float.parseFloat(textView1.getText().toString());
+                double temp8 = Math.sqrt(temp7);
+                textView1.setText(String.valueOf(temp8));
+                break;
+            case R.id.buttonInvert:
+                float temp9 = Float.parseFloat(textView1.getText().toString());
+                double temp10 = 1 / temp9;
+                textView1.setText(String.valueOf(temp10));
+                break;
         }
     }
 
