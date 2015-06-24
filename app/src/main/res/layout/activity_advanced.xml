@@ -154,7 +154,6 @@
         android:layout_height="50dp"
         android:layout_above="@+id/buttonEquals"
         android:layout_alignParentEnd="true"
-        android:onClick=""
         android:text="@string/buttonPercent"
         android:textSize="20sp" />
 

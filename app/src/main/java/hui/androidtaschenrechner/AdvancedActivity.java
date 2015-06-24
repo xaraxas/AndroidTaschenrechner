@@ -205,6 +205,7 @@ public class AdvancedActivity extends AppCompatActivity {
 
 
                 }
+                // TODO umwandlung zu hex
                 if (checkedId == R.id.radioButtonHex) {
                     // buttonDecimalPoint, buttonSquared, buttonSquareRoot, buttonInvert, buttonPercent
                     enableAllButtons();
@@ -253,6 +254,7 @@ public class AdvancedActivity extends AppCompatActivity {
 
 
                 }
+                // TODO umwandlung zu okt
                 if (checkedId == R.id.radioButtonOkt) {
                     //button9, button8, buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonDecimalPoint, buttonSquared, buttonSquareRoot, buttonInvert, buttonPercent
                     enableAllButtons();
@@ -288,10 +290,7 @@ public class AdvancedActivity extends AppCompatActivity {
 
                         }
                         if (currentFormat.equals("oct")) {
-                            if (!textView1.getText().toString().equals(null)) {
-                                int valueOct = Integer.parseInt(textView1.getText().toString(), 8);
-                                textView1.setText(valueOct);
-                            }
+
                         }
                         if (currentFormat.equals("hex")) {
                             if (!textView1.getText().toString().equals(null)) {
@@ -612,23 +611,35 @@ public class AdvancedActivity extends AppCompatActivity {
 
             case R.id.buttonSquared:
                 if (!textView1.getText().toString().equals(null)) {
+                    try{
                     float temp5 = Float.parseFloat(textView1.getText().toString());
                     double temp6 = Math.pow(temp5, 2);
                     textView1.setText(String.valueOf(temp6));
+                    }catch (NumberFormatException ex){
+                        ex.printStackTrace();
+                    }
                 }
                 break;
             case R.id.buttonSquareRoot:
                 if (!textView1.getText().toString().equals(null)) {
-                    float temp7 = Float.parseFloat(textView1.getText().toString());
-                    double temp8 = Math.sqrt(temp7);
-                    textView1.setText(String.valueOf(temp8));
+                    try {
+                        float temp7 = Float.parseFloat(textView1.getText().toString());
+                        double temp8 = Math.sqrt(temp7);
+                        textView1.setText(String.valueOf(temp8));
+                    }catch (NumberFormatException ex){
+                        ex.printStackTrace();
+                    }
                 }
                 break;
             case R.id.buttonInvert:
                 if (!textView1.getText().toString().equals(null)) {
+                    try{
                     float temp9 = Float.parseFloat(textView1.getText().toString());
                     double temp10 = 1 / temp9;
                     textView1.setText(String.valueOf(temp10));
+                    }catch (NumberFormatException ex){
+                        ex.printStackTrace();
+                    }
                 }
                 break;
         }
