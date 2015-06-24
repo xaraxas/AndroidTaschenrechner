@@ -4,6 +4,7 @@ package hui.androidtaschenrechner;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     Float temp1, temp2, temp4, result, floatNull;
     RadioGroup radioModeGroup;
     RadioButton radioButtonHex, radioButtonBin, radioButtonDez, radioButtonOkt;
+    String currentFormat = "dezi";
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -88,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         radioButtonDez = (RadioButton) findViewById(R.id.radioButtonDez);
         radioButtonOkt = (RadioButton) findViewById(R.id.radioButtonOkt);
         radioButtonHex = (RadioButton) findViewById(R.id.radioButtonHex);
-
         radioModeGroup = (RadioGroup) findViewById(R.id.radioModeGroup);
 
         radioModeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -110,12 +111,36 @@ public class MainActivity extends AppCompatActivity {
                     disableButton(buttonD);
                     disableButton(buttonE);
                     disableButton(buttonF);
+                    try {
+                        if (currentFormat.equals("dezi")) {
+
+
+                        }
+                        if (currentFormat.equals("oct")) {
+                            int valueOct = Integer.parseInt(textView1.getText().toString(), 8);
+                            textView1.setText(String.valueOf(valueOct));
+                        }
+                        if (currentFormat.equals("hex")) {
+                            int valueHex = Integer.parseInt(textView1.getText().toString(), 16);
+
+                            textView1.setText(String.valueOf(valueHex));
+                        }
+                        if (currentFormat.equals("bin")) {
+                            int valueBin = Integer.parseInt(textView1.getText().toString(), 2);
+                            textView1.setText(String.valueOf(valueBin));
+
+                        }
+                    } catch (NumberFormatException ex) {
+                        ex.printStackTrace();
+                    }
+                    currentFormat = "dezi";
 
 
                 }
                 if (checkedId == R.id.radioButtonBin) {
                     enableAllButtons();
                     //button3, button4, button5, button6, button7, button8, button9, buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonDecimalPoint, buttonSquared, buttonSquareRoot, buttonInvert, buttonPercent
+                    disableButton(button2);
                     disableButton(button3);
                     disableButton(button4);
                     disableButton(button5);
@@ -134,6 +159,45 @@ public class MainActivity extends AppCompatActivity {
                     disableButton(buttonSquareRoot);
                     disableButton(buttonInvert);
                     disableButton(buttonPercent);
+                    disableButton(buttonAdd);
+                    disableButton(buttonSubtract);
+                    disableButton(buttonMultiply);
+                    disableButton(buttonDivide);
+                    try {
+                        if (currentFormat.equals("dezi")) {
+                            if (!textView1.getText().toString().equals(null)) {
+                                try {
+                                    textView1.setText(textViewToBin(textView1));
+
+                                } catch (NumberFormatException ex) {
+                                    ex.printStackTrace();
+                                    textView1.setText("Error");
+                                }
+                            }
+
+                        }
+                        if (currentFormat.equals("oct")) {
+                            if (!textView1.getText().toString().equals(null)) {
+
+                                String valueOct = Integer.toBinaryString(Integer.parseInt(textView1.getText().toString(), 8));
+                                textView1.setText(String.valueOf(valueOct));
+                            }
+                        }
+                        if (currentFormat.equals("hex")) {
+                            if (!textView1.getText().toString().equals(null)) {
+                                String valueHex = Integer.toBinaryString(Integer.parseInt(textView1.getText().toString(), 16));
+                                textView1.setText(String.valueOf(valueHex));
+                            }
+                        }
+                        if (currentFormat.equals("bin")) {
+
+
+                        }
+                    } catch (NumberFormatException ex) {
+                        ex.printStackTrace();
+                    }
+                    currentFormat = "bin";
+
 
                 }
                 if (checkedId == R.id.radioButtonHex) {
@@ -145,6 +209,44 @@ public class MainActivity extends AppCompatActivity {
                     disableButton(buttonInvert);
                     disableButton(buttonPercent);
 
+                    disableButton(buttonAdd);
+                    disableButton(buttonSubtract);
+                    disableButton(buttonMultiply);
+                    disableButton(buttonDivide);
+                    try {
+                        if (currentFormat.equals("dezi")) {
+                            if (!textView1.getText().toString().equals(null)) {
+                                try {
+                                    textView1.setText(textViewToHex(textView1));
+                                } catch (NumberFormatException ex) {
+                                    ex.printStackTrace();
+                                    textView1.setText("Error");
+                                }
+
+                            }
+                        }
+                        if (currentFormat.equals("oct")) {
+                            if (!textView1.getText().toString().equals(null)) {
+
+                                String valueOct = Integer.toHexString(Integer.parseInt(textView1.getText().toString(), 8));
+                                textView1.setText(String.valueOf(valueOct));
+                            }
+                        }
+                        if (currentFormat.equals("hex")) {
+
+                        }
+                        if (currentFormat.equals("bin")) {
+                            if (!textView1.getText().toString().equals(null)) {
+                                String valueBin = Integer.toHexString(Integer.parseInt(textView1.getText().toString(), 2));
+                                textView1.setText(String.valueOf(valueBin));
+                            }
+                        }
+                    } catch (NumberFormatException ex) {
+                        ex.printStackTrace();
+                    }
+                    currentFormat = "hex";
+
+
                 }
                 if (checkedId == R.id.radioButtonOkt) {
                     //button9, button8, buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonDecimalPoint, buttonSquared, buttonSquareRoot, buttonInvert, buttonPercent
@@ -154,6 +256,11 @@ public class MainActivity extends AppCompatActivity {
                     disableButton(buttonSquareRoot);
                     disableButton(buttonInvert);
                     disableButton(buttonPercent);
+
+                    disableButton(buttonAdd);
+                    disableButton(buttonSubtract);
+                    disableButton(buttonMultiply);
+                    disableButton(buttonDivide);
                     disableButton(button8);
                     disableButton(button9);
                     disableButton(buttonA);
@@ -162,9 +269,44 @@ public class MainActivity extends AppCompatActivity {
                     disableButton(buttonD);
                     disableButton(buttonE);
                     disableButton(buttonF);
+                    try {
+                        if (currentFormat.equals("dezi")) {
+                            if (!textView1.getText().toString().equals(null)) {
+                                try {
+                                    textView1.setText(textViewToOct(textView1));
+
+                                } catch (NumberFormatException ex) {
+                                    ex.printStackTrace();
+                                    textView1.setText("Error");
+                                }
+                            }
+
+                        }
+                        if (currentFormat.equals("oct")) {
+                            if (!textView1.getText().toString().equals(null)) {
+                                int valueOct = Integer.parseInt(textView1.getText().toString(), 8);
+                                textView1.setText(valueOct);
+                            }
+                        }
+                        if (currentFormat.equals("hex")) {
+                            if (!textView1.getText().toString().equals(null)) {
+                                String valueHex = Integer.toOctalString(Integer.parseInt(textView1.getText().toString(), 16));
+                                textView1.setText(valueHex);
+                            }
+                        }
+                        if (currentFormat.equals("bin")) {
+                            if (!textView1.getText().toString().equals(null)) {
+                                String valueBin = Integer.toOctalString(Integer.parseInt(textView1.getText().toString(), 2));
+                                textView1.setText(valueBin);
+                            }
+                        }
+                    } catch (NumberFormatException ex) {
+                        ex.printStackTrace();
+                    }
+
+
+                    currentFormat = "oct";
                 }
-
-
 
             }
 
@@ -212,6 +354,29 @@ public class MainActivity extends AppCompatActivity {
 
     public void disableButton(Button button) {
         button.setEnabled(false);
+    }
+
+    public void onClickABC(View v) {
+        switch (v.getId()) {
+            case R.id.buttonA:
+                textView1.append("A");
+                break;
+            case R.id.buttonB:
+                textView1.append("B");
+                break;
+            case R.id.buttonC:
+                textView1.append("C");
+                break;
+            case R.id.buttonD:
+                textView1.append("D");
+                break;
+            case R.id.buttonE:
+                textView1.append("E");
+                break;
+            case R.id.buttonF:
+                textView1.append("F");
+                break;
+        }
     }
 
     public void onClickListenerNum(View v) {
@@ -338,36 +503,54 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public String textViewToBin(TextView textview) {
+
+        String binaryString = Integer.toBinaryString(Integer.parseInt(textview.getText().toString()));
+
+        return binaryString;
+    }
+
+    public String textViewToHex(TextView textview) {
+        String hexString = Integer.toHexString(Integer.parseInt(textview.getText().toString()));
+
+        return hexString;
+    }
+
+    public String textViewToOct(TextView textview) {
+        String octString = Integer.toOctalString(Integer.parseInt(textview.getText().toString()));
+        return octString;
+    }
+
     public void onClickEquals(View v) {
 
-        if (radioButtonBin.isChecked()) {
-            try {
-                String binaryString = Integer.toBinaryString(Integer.parseInt(textView1.getText().toString()));
-                textView1.setText(binaryString);
-            } catch (NullPointerException ex) {
-                ex.printStackTrace();
-            }
-
-        }
-        if (radioButtonHex.isChecked()) {
-            try {
-                String hexString = Integer.toHexString(Integer.parseInt(textView1.getText().toString()));
-                textView1.setText(hexString);
-            } catch (NullPointerException ex) {
-                ex.printStackTrace();
-            }
-
-        }
-        if (radioButtonOkt.isChecked()) {
-            try {
-                String oktString = Integer.toOctalString(Integer.parseInt(textView1.getText().toString()));
-                textView1.setText(oktString);
-            } catch (NullPointerException ex) {
-                ex.printStackTrace();
-            }
-
-
-        }
+//        if (radioButtonBin.isChecked()) {
+//            try {
+//
+//                textView1.setText(textViewToBin(textView1));
+//            } catch (NullPointerException ex) {
+//                ex.printStackTrace();
+//            }
+//
+//        }
+//        if (radioButtonHex.isChecked()) {
+//            try {
+//
+//                textView1.setText(textViewToHex(textView1));
+//            } catch (NullPointerException ex) {
+//                ex.printStackTrace();
+//            }
+//
+//        }
+//        if (radioButtonOkt.isChecked()) {
+//            try {
+//
+//                textView1.setText(textViewToOct(textView1));
+//            } catch (NullPointerException ex) {
+//                ex.printStackTrace();
+//            }
+//
+//
+//        }
         if (radioButtonDez.isChecked()) {
             if (textView1.getText().toString().equals("")) {
 
