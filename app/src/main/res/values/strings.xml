@@ -35,7 +35,7 @@
     <string name="buttonD">D</string>
     <string name="buttonE">E</string>
     <string name="buttonF">F</string>
-    <string name="buttonPercentage">%</string>
+    <string name="buttonPercent">%</string>
     <string name="radiobuttonHex">Hex</string>
     <string name="radiobuttonDez">Dez</string>
     <string name="radiobuttonOkt">Okt</string>
@@ -45,6 +45,7 @@
     <string name="and">AND</string>
     <string name="or">OR</string>
     <string name="xor">XOR</string>
+    <string name="normal">Normal</string>
 
     <string name="hello_world">Hello world!</string>
 

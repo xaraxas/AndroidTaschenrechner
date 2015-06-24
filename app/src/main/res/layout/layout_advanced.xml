@@ -143,19 +143,19 @@
         android:layout_width="70dp"
         android:layout_height="50dp"
         android:layout_below="@+id/button9"
-        android:layout_toStartOf="@+id/buttonPercentage"
+        android:layout_toStartOf="@+id/buttonPercent"
         android:onClick="onClickListenerOperator"
         android:text="@string/buttonMultiply"
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/buttonPercentage"
+        android:id="@+id/buttonPercent"
         android:layout_width="70dp"
         android:layout_height="50dp"
         android:layout_above="@+id/buttonEquals"
         android:layout_alignParentEnd="true"
         android:onClick=""
-        android:text="@string/buttonPercentage"
+        android:text="@string/buttonPercent"
         android:textSize="20sp" />
 
     <Button
@@ -201,7 +201,7 @@
         android:id="@+id/buttonSquareRoot"
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:layout_alignStart="@+id/buttonPercentage"
+        android:layout_alignStart="@+id/buttonPercent"
         android:layout_alignTop="@+id/buttonDivide"
         android:onClick="onClickX"
         android:text="@string/buttonSquareRoot"
@@ -263,8 +263,8 @@
         android:id="@+id/radioModeGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/textView1">
+        android:layout_alignBottom="@+id/buttonXor"
+        android:layout_alignEnd="@id/textView1">
 
         <RadioButton
             android:id="@+id/radioButtonHex"
@@ -272,7 +272,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/radiobuttonHex"
-            android:textSize="25sp" />
+            android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/radioButtonDez"
@@ -280,7 +280,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/radiobuttonDez"
-            android:textSize="25sp" />
+            android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/radioButtonOkt"
@@ -288,7 +288,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/radiobuttonOkt"
-            android:textSize="25sp" />
+            android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/radioButtonBin"
@@ -296,12 +296,20 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/radiobuttonBin"
-            android:textSize="25sp" />
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/normal"
+            android:id="@+id/radioButtonNormal"
+            android:checked="true"
+            android:textSize="15sp" />
     </RadioGroup>
 
     <Button
         android:id="@+id/buttonA"
-        android:layout_width="70dp"
+        android:layout_width="60dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/buttonC"
@@ -310,7 +318,7 @@
 
     <Button
         android:id="@+id/buttonB"
-        android:layout_width="70dp"
+        android:layout_width="60dp"
         android:layout_height="50dp"
         android:layout_alignStart="@+id/buttonD"
         android:layout_below="@+id/buttonD"
@@ -319,7 +327,7 @@
 
     <Button
         android:id="@+id/buttonC"
-        android:layout_width="70dp"
+        android:layout_width="60dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/buttonD"
@@ -328,7 +336,7 @@
 
     <Button
         android:id="@+id/buttonD"
-        android:layout_width="70dp"
+        android:layout_width="60dp"
         android:layout_height="50dp"
         android:layout_alignStart="@+id/buttonF"
         android:layout_below="@+id/buttonF"
@@ -337,7 +345,7 @@
 
     <Button
         android:id="@+id/buttonE"
-        android:layout_width="70dp"
+        android:layout_width="60dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView1"
@@ -346,30 +354,30 @@
 
     <Button
         android:id="@+id/buttonF"
-        android:layout_width="70dp"
+        android:layout_width="60dp"
         android:layout_height="50dp"
-        android:layout_alignTop="@+id/buttonE"
-        android:layout_toStartOf="@+id/button9"
         android:text="@string/buttonF"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:layout_below="@id/textView1"
+        android:layout_toEndOf="@id/buttonClear" />
 
     <Button
         android:id="@+id/buttonNot"
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:layout_above="@+id/buttonD"
-        android:layout_toEndOf="@+id/buttonBackspace"
         android:text="@string/not"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_below="@+id/buttonF"
+        android:layout_toEndOf="@id/buttonBackspace" />
 
     <Button
         android:id="@+id/buttonOr"
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:layout_above="@+id/buttonB"
-        android:layout_toEndOf="@+id/buttonBackspace"
         android:text="@string/or"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_below="@+id/buttonD"
+        android:layout_toStartOf="@id/buttonDivide" />
 
     <Button
         android:id="@+id/button"

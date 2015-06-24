@@ -8,17 +8,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, buttonClear, buttonBackspace,
-            buttonDivide, buttonMultiply, buttonSubtract, buttonAdd, buttonDecimalPoint, buttonEquals;
+            buttonDivide, buttonMultiply, buttonSubtract, buttonAdd, buttonDecimalPoint, buttonEquals, buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonSquared, buttonSquareRoot, buttonInvert, buttonPercent;
     TextView textView1;
     String operator;
     Float temp1, temp2, temp4, result, floatNull;
-    private RadioGroup radioModeGroup;
+    RadioGroup radioModeGroup;
+    RadioButton radioButtonHex, radioButtonBin, radioButtonDez, radioButtonOkt, radioButtonNormal;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,6 +65,16 @@ public class MainActivity extends AppCompatActivity {
         button7 = (Button) findViewById(R.id.button7);
         button8 = (Button) findViewById(R.id.button8);
         button9 = (Button) findViewById(R.id.button9);
+        buttonA = (Button) findViewById(R.id.buttonA);
+        buttonB = (Button) findViewById(R.id.buttonB);
+        buttonC = (Button) findViewById(R.id.buttonC);
+        buttonD = (Button) findViewById(R.id.buttonD);
+        buttonE = (Button) findViewById(R.id.buttonE);
+        buttonF = (Button) findViewById(R.id.buttonF);
+        buttonSquareRoot = (Button) findViewById(R.id.buttonSquareRoot);
+        buttonSquared = (Button) findViewById(R.id.buttonSquared);
+        buttonInvert = (Button) findViewById(R.id.buttonInvert);
+        buttonPercent = (Button) findViewById(R.id.buttonPercent);
         buttonClear = (Button) findViewById(R.id.buttonClear);
         buttonBackspace = (Button) findViewById(R.id.buttonBackspace);
         buttonDivide = (Button) findViewById(R.id.buttonDivide);
@@ -72,8 +84,110 @@ public class MainActivity extends AppCompatActivity {
         buttonDecimalPoint = (Button) findViewById(R.id.buttonDecimalPoint);
         buttonEquals = (Button) findViewById(R.id.buttonEquals);
         textView1 = (TextView) findViewById(R.id.textView1);
+        radioButtonBin = (RadioButton) findViewById(R.id.radioButtonBin);
+        radioButtonDez = (RadioButton) findViewById(R.id.radioButtonDez);
+        radioButtonOkt = (RadioButton) findViewById(R.id.radioButtonOkt);
+        radioButtonHex = (RadioButton) findViewById(R.id.radioButtonHex);
+        radioButtonNormal = (RadioButton) findViewById(R.id.radioButtonNormal);
         radioModeGroup = (RadioGroup) findViewById(R.id.radioModeGroup);
 
+        radioModeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+
+            @Override
+
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                // find which radio button is selected
+
+                if (checkedId == R.id.radioButtonDez) {
+                    enableAllButtons();
+
+                    //buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonDecimalPoint, buttonSquared, buttonSquareRoot, buttonInvert, buttonPercent
+                    disableButton(buttonA);
+                    disableButton(buttonB);
+                    disableButton(buttonC);
+                    disableButton(buttonD);
+                    disableButton(buttonE);
+                    disableButton(buttonF);
+                    disableButton(buttonDecimalPoint);
+                    disableButton(buttonSquared);
+                    disableButton(buttonSquareRoot);
+                    disableButton(buttonInvert);
+                    disableButton(buttonPercent);
+
+
+                }
+                if (checkedId == R.id.radioButtonBin) {
+                    enableAllButtons();
+                    //button3, button4, button5, button6, button7, button8, button9, buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonDecimalPoint, buttonSquared, buttonSquareRoot, buttonInvert, buttonPercent
+                    disableButton(button3);
+                    disableButton(button4);
+                    disableButton(button5);
+                    disableButton(button6);
+                    disableButton(button7);
+                    disableButton(button8);
+                    disableButton(button9);
+                    disableButton(buttonA);
+                    disableButton(buttonB);
+                    disableButton(buttonC);
+                    disableButton(buttonD);
+                    disableButton(buttonE);
+                    disableButton(buttonF);
+                    disableButton(buttonDecimalPoint);
+                    disableButton(buttonSquared);
+                    disableButton(buttonSquareRoot);
+                    disableButton(buttonInvert);
+                    disableButton(buttonPercent);
+
+                }
+                if (checkedId == R.id.radioButtonHex) {
+                    // buttonDecimalPoint, buttonSquared, buttonSquareRoot, buttonInvert, buttonPercent
+                    enableAllButtons();
+                    disableButton(buttonDecimalPoint);
+                    disableButton(buttonSquared);
+                    disableButton(buttonSquareRoot);
+                    disableButton(buttonInvert);
+                    disableButton(buttonPercent);
+
+                }
+                if (checkedId == R.id.radioButtonOkt) {
+                    //button9, button8, buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonDecimalPoint, buttonSquared, buttonSquareRoot, buttonInvert, buttonPercent
+                    enableAllButtons();
+                    disableButton(buttonDecimalPoint);
+                    disableButton(buttonSquared);
+                    disableButton(buttonSquareRoot);
+                    disableButton(buttonInvert);
+                    disableButton(buttonPercent);
+                    disableButton(button8);
+                    disableButton(button9);
+                    disableButton(buttonA);
+                    disableButton(buttonB);
+                    disableButton(buttonC);
+                    disableButton(buttonD);
+                    disableButton(buttonE);
+                    disableButton(buttonF);
+                }
+
+
+            }
+
+
+        });
+
+
+    }
+
+    public void enableAllButtons() {
+        enableButton(button0);
+    }
+
+    public void enableButton(Button button) {
+        button.setEnabled(true);
+    }
+
+    public void disableButton(Button button) {
+        button.setEnabled(false);
     }
 
     public void onClickListenerNum(View v) {
@@ -201,50 +315,90 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickEquals(View v) {
-        if (textView1.getText().toString().equals("")) {
+//        if (radioButtonDez.isChecked()) {
+//            try{
+//                String dezString = Integer.(Integer.parseInt(textView1.getText().toString()));
+//            }catch(NullPointerException ex){
+//                ex.printStackTrace();
+//            }
+//
+//        }
+        if (radioButtonBin.isChecked()) {
+            try {
+                String binaryString = Integer.toBinaryString(Integer.parseInt(textView1.getText().toString()));
+                textView1.setText(binaryString);
+            } catch (NullPointerException ex) {
+                ex.printStackTrace();
+            }
 
-        } else {
-
-            temp2 = Float.parseFloat(textView1.getText().toString());
         }
-        if (temp1 != null) {
-
-            if (operator.equals("/")) {
-                result = temp1 / temp2;
-                temp1 = null;
-                temp2 = null;
-                textView1.setText(String.valueOf(result));
-
+        if (radioButtonHex.isChecked()) {
+            try {
+                String hexString = Integer.toHexString(Integer.parseInt(textView1.getText().toString()));
+                textView1.setText(hexString);
+            } catch (NullPointerException ex) {
+                ex.printStackTrace();
             }
-            if (operator.equals("+")) {
-                result = temp1 + temp2;
-                temp1 = null;
-                temp2 = null;
-                textView1.setText(String.valueOf(result));
 
+        }
+        if (radioButtonOkt.isChecked()) {
+            try {
+                String oktString = Integer.toOctalString(Integer.parseInt(textView1.getText().toString()));
+                textView1.setText(oktString);
+            } catch (NullPointerException ex) {
+                ex.printStackTrace();
             }
-            if (operator.equals("*")) {
-                result = temp1 * temp2;
-                temp1 = null;
-                temp2 = null;
-                textView1.setText(String.valueOf(result));
 
-            }
-            if (operator.equals("-")) {
-                result = temp1 - temp2;
-                temp1 = null;
-                temp2 = null;
-                textView1.setText(String.valueOf(result));
 
-            }
-        } else {
+        }
+        if (radioButtonNormal.isChecked()) {
             if (textView1.getText().toString().equals("")) {
 
             } else {
-                temp4 = Float.parseFloat(textView1.getText().toString());
-                textView1.setText(temp4.toString());
+
+                temp2 = Float.parseFloat(textView1.getText().toString());
             }
+            if (temp1 != null) {
+
+                if (operator.equals("/")) {
+                    result = temp1 / temp2;
+                    temp1 = null;
+                    temp2 = null;
+                    textView1.setText(String.valueOf(result));
+
+                }
+                if (operator.equals("+")) {
+                    result = temp1 + temp2;
+                    temp1 = null;
+                    temp2 = null;
+                    textView1.setText(String.valueOf(result));
+
+                }
+                if (operator.equals("*")) {
+                    result = temp1 * temp2;
+                    temp1 = null;
+                    temp2 = null;
+                    textView1.setText(String.valueOf(result));
+
+                }
+                if (operator.equals("-")) {
+                    result = temp1 - temp2;
+                    temp1 = null;
+                    temp2 = null;
+                    textView1.setText(String.valueOf(result));
+
+                }
+            } else {
+                if (textView1.getText().toString().equals("")) {
+
+                } else {
+                    temp4 = Float.parseFloat(textView1.getText().toString());
+                    textView1.setText(temp4.toString());
+                }
+            }
+
         }
+
     }
 
     public void onClickX(View v) {

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Activity zur Anzeige der HTML-Onlinehilfe. Oberfläche: layout/show_help.xml
+ * Activity zur Anzeige der HTML-Onlinehilfe. Oberflaeche: layout/show_help.xml
  *
  * @author Wolfgang Lang
  * @version 1.0.7, 2014-11-02
@@ -35,11 +35,11 @@ public class DocumentationActivity extends Activity {
         view.getSettings().setJavaScriptEnabled(true);
 
     /*
-     * Die Hilfe lässt sich auch von einem Server laden mit: view.loadUrl(
+     * Die Hilfe laesst sich auch von einem Server laden mit: view.loadUrl(
      * "http://www.lehre-online.net/..." );
      *
      * Ggf. lassen sich auch unterschiedliche HTML-Seiten aufrufen. In diesem
-     * Fall wird die id für openRawResource() im Intent-Bundle übergeben.
+     * Fall wird die id fuer openRawResource() im Intent-Bundle uebergeben.
      * Beispiel: final Bundle extras = getIntent().getExtras(); if( (extras !=
      * null) && (extras.containsKey( KEY_MY_HELP )) ) int id = extras.getInt(
      * KEY_MY_HELP );

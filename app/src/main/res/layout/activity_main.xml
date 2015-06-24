@@ -28,40 +28,7 @@
             android:textSize="40sp" />
     </LinearLayout>
 
-    <!--<LinearLayout-->
-        <!--android:id="@+id/row2"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:layout_weight=".12" >-->
 
-        <!--<RadioButton-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/rbHex"-->
-            <!--android:id="@+id/radioButton"-->
-            <!--android:checked="false" />-->
-
-        <!--<RadioButton-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/rbDez"-->
-            <!--android:id="@+id/radioButton2"-->
-            <!--android:checked="false" />-->
-
-        <!--<RadioButton-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/rbOct"-->
-            <!--android:id="@+id/radioButton3"-->
-            <!--android:checked="false" />-->
-
-        <!--<RadioButton-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/rbBin"-->
-            <!--android:id="@+id/radioButton4"-->
-            <!--android:checked="false" />-->
-    <!--</LinearLayout>-->
 
     <LinearLayout
         android:id="@+id/row3"
