@@ -272,7 +272,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/radiobuttonHex"
-            android:textSize="15sp" />
+            android:textSize="25sp" />
 
         <RadioButton
             android:id="@+id/radioButtonDez"
@@ -280,7 +280,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/radiobuttonDez"
-            android:textSize="15sp" />
+            android:textSize="25sp" />
 
         <RadioButton
             android:id="@+id/radioButtonOkt"
@@ -288,7 +288,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/radiobuttonOkt"
-            android:textSize="15sp" />
+            android:textSize="25sp" />
 
         <RadioButton
             android:id="@+id/radioButtonBin"
@@ -296,15 +296,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/radiobuttonBin"
-            android:textSize="15sp" />
+            android:textSize="25sp" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/normal"
-            android:id="@+id/radioButtonNormal"
-            android:checked="true"
-            android:textSize="15sp" />
+
     </RadioGroup>
 
     <Button

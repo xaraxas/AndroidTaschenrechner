@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     String operator;
     Float temp1, temp2, temp4, result, floatNull;
     RadioGroup radioModeGroup;
-    RadioButton radioButtonHex, radioButtonBin, radioButtonDez, radioButtonOkt, radioButtonNormal;
+    RadioButton radioButtonHex, radioButtonBin, radioButtonDez, radioButtonOkt;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         radioButtonDez = (RadioButton) findViewById(R.id.radioButtonDez);
         radioButtonOkt = (RadioButton) findViewById(R.id.radioButtonOkt);
         radioButtonHex = (RadioButton) findViewById(R.id.radioButtonHex);
-        radioButtonNormal = (RadioButton) findViewById(R.id.radioButtonNormal);
+
         radioModeGroup = (RadioGroup) findViewById(R.id.radioModeGroup);
 
         radioModeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -110,11 +110,6 @@ public class MainActivity extends AppCompatActivity {
                     disableButton(buttonD);
                     disableButton(buttonE);
                     disableButton(buttonF);
-                    disableButton(buttonDecimalPoint);
-                    disableButton(buttonSquared);
-                    disableButton(buttonSquareRoot);
-                    disableButton(buttonInvert);
-                    disableButton(buttonPercent);
 
 
                 }
@@ -170,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
+
             }
 
 
@@ -180,6 +176,34 @@ public class MainActivity extends AppCompatActivity {
 
     public void enableAllButtons() {
         enableButton(button0);
+        enableButton(button1);
+        enableButton(button2);
+        enableButton(button3);
+        enableButton(button4);
+        enableButton(button5);
+        enableButton(button6);
+        enableButton(button7);
+        enableButton(button8);
+        enableButton(button9);
+        enableButton(buttonAdd);
+        enableButton(buttonSubtract);
+        enableButton(buttonMultiply);
+        enableButton(buttonDivide);
+        enableButton(buttonPercent);
+        enableButton(buttonInvert);
+        enableButton(buttonSquared);
+        enableButton(buttonSquareRoot);
+        enableButton(buttonA);
+        enableButton(buttonB);
+        enableButton(buttonC);
+        enableButton(buttonD);
+        enableButton(buttonE);
+        enableButton(buttonF);
+        enableButton(buttonEquals);
+        enableButton(buttonBackspace);
+        enableButton(buttonClear);
+        enableButton(buttonDecimalPoint);
+
     }
 
     public void enableButton(Button button) {
@@ -315,14 +339,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickEquals(View v) {
-//        if (radioButtonDez.isChecked()) {
-//            try{
-//                String dezString = Integer.(Integer.parseInt(textView1.getText().toString()));
-//            }catch(NullPointerException ex){
-//                ex.printStackTrace();
-//            }
-//
-//        }
+
         if (radioButtonBin.isChecked()) {
             try {
                 String binaryString = Integer.toBinaryString(Integer.parseInt(textView1.getText().toString()));
@@ -351,7 +368,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
-        if (radioButtonNormal.isChecked()) {
+        if (radioButtonDez.isChecked()) {
             if (textView1.getText().toString().equals("")) {
 
             } else {
