@@ -280,7 +280,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/radiobuttonDez"
-            android:textSize="25sp" />
+
+            android:textSize="25sp"
+            android:checked="true" />
 
         <RadioButton
             android:id="@+id/radioButtonOkt"
