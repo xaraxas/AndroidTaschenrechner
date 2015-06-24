@@ -14,10 +14,10 @@
         android:maxLines="1"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="0"
+        android:hint="0"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="75sp"
-        android:id="@+id/textView"
+        android:id="@+id/textView1"
         android:layout_alignTop="@+id/editText"
         android:layout_toEndOf="@+id/buttonE" />
 
@@ -189,7 +189,7 @@
         android:layout_height="50dp"
         android:text="@string/buttonSquareRoot"
         android:textSize="20sp"
-        android:id="@+id/buttonSquareroot"
+        android:id="@+id/buttonSquareRoot"
         android:layout_alignTop="@+id/buttonDivide"
         android:layout_alignStart="@+id/buttonPercentage" />
 

@@ -17,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AdvancedMOFO"
-            android:label="@string/title_activity_advanced_mofo" >
+            android:name=".DocumentationActivity"
+            android:label="@string/title_activity_advanced">
         </activity>
     </application>
 
