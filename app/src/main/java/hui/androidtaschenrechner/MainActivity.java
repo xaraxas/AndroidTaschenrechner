@@ -1,11 +1,9 @@
 package hui.androidtaschenrechner;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,13 +16,15 @@ public class MainActivity extends AppCompatActivity {
             buttonDivide, buttonMultiply, buttonSubtract, buttonAdd, buttonDecimalPoint, buttonEquals;
     TextView textView1;
     String operator;
-    Float temp1, temp2,temp4, result,floatNull;
+    Float temp1, temp2, temp4, result, floatNull;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -38,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_main);
         }
         if (id == R.id.menuLayoutAdvanced) {
-           startActivity(new Intent(this,AdvancedActivity.class));
+            startActivity(new Intent(this, AdvancedActivity.class));
 
         }
         if (id == R.id.menuDocumentation) {
             startActivity(new Intent(this, DocumentationActivity.class));
         }
-        if(id == R.id.menuAbout){
-            startActivity(new Intent(this,AboutActivity.class));
+        if (id == R.id.menuAbout) {
+            startActivity(new Intent(this, AboutActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         textView1 = (TextView) findViewById(R.id.textView1);
 
     }
+
     public void onClickListenerDelete(View v) {
         switch (v.getId()) {
             case R.id.buttonBackspace:
@@ -139,14 +140,14 @@ public class MainActivity extends AppCompatActivity {
     public void onClickListenerOperator(View v) {
         switch (v.getId()) {
             case R.id.buttonDivide:
-                if (temp1==floatNull) {
+                if (temp1 == floatNull) {
                     temp1 = Float.parseFloat(textView1.getText().toString());
                     textView1.setText("");
                 }
                 operator = "/";
                 break;
             case R.id.buttonMultiply:
-                if (temp1==floatNull) {
+                if (temp1 == floatNull) {
                     temp1 = Float.parseFloat(textView1.getText().toString());
                     textView1.setText("");
                 }
@@ -154,14 +155,14 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             case R.id.buttonSubtract:
-                if (temp1==floatNull) {
+                if (temp1 == floatNull) {
                     temp1 = Float.parseFloat(textView1.getText().toString());
                     textView1.setText("");
                 }
                 operator = "-";
                 break;
             case R.id.buttonAdd:
-                if (temp1==floatNull) {
+                if (temp1 == floatNull) {
                     temp1 = Float.parseFloat(textView1.getText().toString());
                     textView1.setText("");
                 }

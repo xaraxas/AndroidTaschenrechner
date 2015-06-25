@@ -40,7 +40,7 @@ public class AdvancedActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
 
         if (id == R.id.menuLayoutSimple) {
-            startActivity(new Intent(this,MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
         }
         if (id == R.id.menuLayoutAdvanced) {
             setContentView(R.layout.activity_advanced);
@@ -49,8 +49,8 @@ public class AdvancedActivity extends AppCompatActivity {
         if (id == R.id.menuDocumentation) {
             startActivity(new Intent(this, DocumentationActivity.class));
         }
-        if(id == R.id.menuAbout){
-            startActivity(new Intent(this,AboutActivity.class));
+        if (id == R.id.menuAbout) {
+            startActivity(new Intent(this, AboutActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
@@ -108,11 +108,10 @@ public class AdvancedActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
 
-
                 if (checkedId == R.id.radioButtonDez) {
                     enableAllButtons();
 
-                     disableButton(buttonA);
+                    disableButton(buttonA);
                     disableButton(buttonB);
                     disableButton(buttonC);
                     disableButton(buttonD);
@@ -449,13 +448,12 @@ public class AdvancedActivity extends AppCompatActivity {
                 textView1.setText("");
                 temp1 = floatNull;
                 temp2 = floatNull;
-                temp4=floatNull;
+                temp4 = floatNull;
 
                 break;
 
         }
     }
-
 
 
     public void onClickListenerOperator(View v) {
@@ -614,11 +612,11 @@ public class AdvancedActivity extends AppCompatActivity {
 
             case R.id.buttonSquared:
                 if (!textView1.getText().toString().equals(null)) {
-                    try{
-                    float temp5 = Float.parseFloat(textView1.getText().toString());
-                    double temp6 = Math.pow(temp5, 2);
-                    textView1.setText(String.valueOf(temp6));
-                    }catch (NumberFormatException ex){
+                    try {
+                        float temp5 = Float.parseFloat(textView1.getText().toString());
+                        double temp6 = Math.pow(temp5, 2);
+                        textView1.setText(String.valueOf(temp6));
+                    } catch (NumberFormatException ex) {
                         ex.printStackTrace();
                     }
                 }
@@ -629,18 +627,18 @@ public class AdvancedActivity extends AppCompatActivity {
                         float temp7 = Float.parseFloat(textView1.getText().toString());
                         double temp8 = Math.sqrt(temp7);
                         textView1.setText(String.valueOf(temp8));
-                    }catch (NumberFormatException ex){
+                    } catch (NumberFormatException ex) {
                         ex.printStackTrace();
                     }
                 }
                 break;
             case R.id.buttonInvert:
                 if (!textView1.getText().toString().equals(null)) {
-                    try{
-                    float temp9 = Float.parseFloat(textView1.getText().toString());
-                    double temp10 = 1 / temp9;
-                    textView1.setText(String.valueOf(temp10));
-                    }catch (NumberFormatException ex){
+                    try {
+                        float temp9 = Float.parseFloat(textView1.getText().toString());
+                        double temp10 = 1 / temp9;
+                        textView1.setText(String.valueOf(temp10));
+                    } catch (NumberFormatException ex) {
                         ex.printStackTrace();
                     }
                 }
